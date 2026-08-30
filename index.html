@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Яйцелов</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="game-header">
+        <div>
+          <p class="eyebrow">Локальная canvas-игра</p>
+          <h1>ЯЙЦЕЛОВ</h1>
+        </div>
+
+        <div class="hud" aria-label="Состояние игры">
+          <div class="hud-item">
+            <span>Счёт</span>
+            <strong id="score">0</strong>
+          </div>
+          <div class="hud-item lives-item">
+            <span>Жизни</span>
+            <strong id="lives" aria-label="3 жизни">♥ ♥ ♥</strong>
+          </div>
+        </div>
+      </header>
+
+      <section class="game-stage" aria-label="Игровое поле">
+        <canvas id="gameCanvas" width="960" height="640">
+          Ваш браузер не поддерживает Canvas.
+        </canvas>
+
+        <div id="gameOver" class="game-over" hidden>
+          <div class="game-over-card">
+            <p class="eyebrow">Игра окончена</p>
+            <h2>Яйца разбежались!</h2>
+            <p>Ваш счёт: <strong id="finalScore">0</strong></p>
+            <button id="restartButton" type="button">Играть ещё раз</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Управление">
+        <div class="instructions">
+          <span class="key-pair"><kbd>←</kbd><kbd>→</kbd></span>
+          <span>выбрать сторону</span>
+          <span class="separator" aria-hidden="true">•</span>
+          <span class="key-pair"><kbd>↑</kbd><kbd>↓</kbd></span>
+          <span>выбрать высоту</span>
+        </div>
+
+        <div class="touch-controls" aria-label="Экранные кнопки">
+          <button type="button" data-control="left" aria-label="Влево">←</button>
+          <button type="button" data-control="up" aria-label="Вверх">↑</button>
+          <button type="button" data-control="down" aria-label="Вниз">↓</button>
+          <button type="button" data-control="right" aria-label="Вправо">→</button>
+        </div>
+      </section>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
